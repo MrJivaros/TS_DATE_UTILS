@@ -1,17 +1,10 @@
-import "./styles.css";
-import { DateTime } from "luxon";
+import './styles.css'
+import { DateTime } from 'luxon'
 
-document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use the same configuration as Parcel to bundle this sandbox, you can find more
-  info about Parcel 
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>`;
-
-function main() {
-  const date = DateTime.fromISO("2022-06-14");
-  console.log("start", date.toISO());
+function checkArchivingDateIs3DaysOld(arcivedDate: string) {
+ const date = DateTime.fromISO(arcivedDate).toISODate()
+ const today = DateTime.now().plus({ days: -3 }).toISODate()
+ return new Date(date).getTime() === new Date(today).getTime()
 }
 
-main();
+console.log(checkArchivingDateIs3DaysOld('2022-06-12'))

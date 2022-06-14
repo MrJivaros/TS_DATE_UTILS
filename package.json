@@ -12,6 +12,7 @@
     "parcel-bundler": "^1.6.1"
   },
   "devDependencies": {
+    "@types/luxon": "^2.3.2",
     "typescript": "4.4.4"
   },
   "resolutions": {
